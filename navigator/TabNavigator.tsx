@@ -1,6 +1,7 @@
 
-import React, { useLayoutEffect } from 'react'
+import { Icon } from '@rneui/themed'
 import { View, Text } from 'react-native'
+import React, { useLayoutEffect } from 'react'
 
 import { useNavigation } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -25,7 +26,10 @@ const TabNavigator = () => {
   })
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={({route}) => ({
+      tabBarActiveTintColor: '#59c1cc',
+      tabBarInactiveTintColor: 'gray'
+    })}>
       <Tab.Screen name='Customers' component={CustomersScreen} />
       <Tab.Screen name='Orders' component={OrdersScreen} />
     </Tab.Navigator>
