@@ -63,6 +63,25 @@ const DeliveryCard = ({ order }: Props) => {
           </View>
         ))}
       </View>
+
+      <MapView
+        initialRegion={{
+          latitude: order.Lat,
+          longitude: order.Lng,
+          latitudeDelta: 0.005,
+          longitudeDelta: 0.005,
+        }}
+        style={[tw`w-full`, { height: 200 }]}
+      >
+        {order.Lat && order.Lng && (
+          <Marker
+            coordinate={{ latitude: order.Lat, longitude: order.Lng }}
+            title="Delivery Location"
+            description={order.Address}
+            identifier="destination"
+          />
+        )}
+      </MapView>
     </Card>
   );
 };
