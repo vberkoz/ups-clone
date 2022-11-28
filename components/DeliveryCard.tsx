@@ -38,7 +38,7 @@ const DeliveryCard = ({ order }: Props) => {
           <Divider color="white" />
         </View>
 
-        <View style={tw`mx-auto`}>
+        <View style={tw`mx-auto pb-5`}>
           <Text style={tw`text-base text-center text-white font-bold mt-5`}>
             Adderss
           </Text>
@@ -56,7 +56,7 @@ const DeliveryCard = ({ order }: Props) => {
       <Divider color="white" />
 
       <View style={tw`p-5`}>
-        {order.trackingItems.items.map((item) => (
+        {order.trackingItems.items.map((item: any) => (
           <View style={tw`flex-row justify-between items-center`}>
             <Text style={tw`text-sm italic text-white`}>{item.name}</Text>
             <Text style={tw`text-xl text-white`}>x {item.quantity}</Text>
