@@ -20,9 +20,8 @@ const useOrders = () => {
       Address: value.Address,
       City: value.City,
     }));
+    setOrders(orders);
   }, [data]);
-
-  setOrders(orders);
 
   return { loading, error, orders };
 };
